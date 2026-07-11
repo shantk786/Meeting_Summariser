@@ -82,6 +82,9 @@ npm run dev
 - `GEMINI_API_KEY` - required for summary generation
 - `GEMINI_MODEL` - defaults to `gemini-2.5-flash`
 - `WHISPER_MODEL` - local Whisper model name such as `small`
+- `QUEUE_WORKERS` - number of background processing workers
+- `DIARIZATION_PROVIDER` - `fallback` or `pyannote`
+- `PYANNOTE_AUTH_TOKEN` - only needed when using `pyannote`
 
 
 ### Frontend
@@ -94,8 +97,29 @@ npm run dev
 - `POST /process/{meeting_id}` - transcribe and summarize the uploaded file
 - `GET /meeting/{id}` - fetch one processed meeting
 - `GET /meetings` - list processed meetings
+- `GET /search/meetings` - search meetings by transcript, summary, or filename
+- `GET /meeting/{id}/pdf` - download a PDF summary for a meeting
 - `DELETE /meeting/{id}` - delete a meeting and remove its stored file
 
+<<<<<<< HEAD
+=======
+## Screenshots
+
+Add submission screenshots here before final delivery:
+
+- Landing page
+- Upload flow in progress
+- Transcript and summary dashboard
+
+## Future Improvements
+
+- Background job queue for longer processing tasks
+- PostgreSQL migration scripts
+- Speaker diarization
+- PDF export
+- Full-text meeting search
+
+>>>>>>> f465dc0 (Improved UI and updated documentation)
 ## Notes
 
 - Routes only coordinate work; transcription and summarization live in dedicated services.
