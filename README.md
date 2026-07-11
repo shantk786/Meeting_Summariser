@@ -101,26 +101,6 @@ npm run dev
 - `GET /meeting/{id}/pdf` - download a PDF summary for a meeting
 - `DELETE /meeting/{id}` - delete a meeting and remove its stored file
 
-<<<<<<< HEAD
-=======
-## Screenshots
-
-Add submission screenshots here before final delivery:
-
-- Landing page
-- Upload flow in progress
-- Transcript and summary dashboard
-
-## Future Improvements
-
-- Background job queue for longer processing tasks
-- PostgreSQL migration scripts
-- Speaker diarization
-- PDF export
-- Full-text meeting search
-
->>>>>>> f465dc0 (Improved UI and updated documentation)
-## Notes
 
 - Routes only coordinate work; transcription and summarization live in dedicated services.
 - The data model uses JSON fields for key points and action items so the same schema maps cleanly to PostgreSQL later.
