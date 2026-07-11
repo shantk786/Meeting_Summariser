@@ -58,13 +58,6 @@ cd backend
 pip install -r requirements.txt
 ```
 
-2. Copy `backend/.env.example` to `backend/.env` and fill in the API keys.
-3. Start the API with Uvicorn from the `backend` folder:
-
-```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
-
 ### Frontend
 
 1. Install the frontend dependencies in `frontend`.
@@ -74,9 +67,6 @@ cd frontend
 npm install
 ```
 
-2. Copy `frontend/.env.example` to `frontend/.env`.
-3. Run the Vite dev server:
-
 ```bash
 npm run dev
 ```
@@ -85,20 +75,14 @@ npm run dev
 
 ### Backend
 
-- `DATABASE_URL` - SQLite or PostgreSQL connection string
+- `DATABASE_URL` - SQLite
 - `UPLOAD_DIR` - storage directory for uploaded audio
 - `MAX_UPLOAD_MB` - file size limit
-- `TRANSCRIPTION_PROVIDER` - `local` or `openai`
-- `OPENAI_API_KEY` - only needed when transcription uses OpenAI
+- `TRANSCRIPTION_PROVIDER` - `local` or
 - `GEMINI_API_KEY` - required for summary generation
 - `GEMINI_MODEL` - defaults to `gemini-2.5-flash`
 - `WHISPER_MODEL` - local Whisper model name such as `small`
 
-## Operational Notes
-
-- Install `ffmpeg` if you use local Whisper with audio formats that depend on media decoding.
-- Gemini summarization requires a valid `GEMINI_API_KEY`.
-- The app is designed so PostgreSQL can replace SQLite by changing `DATABASE_URL` only.
 
 ### Frontend
 
@@ -111,23 +95,6 @@ npm run dev
 - `GET /meeting/{id}` - fetch one processed meeting
 - `GET /meetings` - list processed meetings
 - `DELETE /meeting/{id}` - delete a meeting and remove its stored file
-
-## Screenshots
-
-Add submission screenshots here before final delivery:
-
-- Landing page
-- Upload flow in progress
-- Transcript and summary dashboard
-
-## Future Improvements
-
-- Background job queue for longer processing tasks
-- PostgreSQL migration scripts
-- Speaker diarization
-- PDF export
-- Full-text meeting search
-- Authentication and multi-user support
 
 ## Notes
 
